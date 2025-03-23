@@ -22,10 +22,14 @@ A trustless multi-chain L2 enabling seamless NFT and asset transfers across Polk
 
 
 WILDCARD is a next-generation, trustless multi-chain L2 designed to eliminate ecosystem lock-in for NFTs and fungible assets. It revolutionizes gaming and web3 markets by offering gasless, near-instant transactions and a non-custodial marketplace for secure asset minting, transfers, and trading. As a multi-chain solution, WILDCARD simplifies secure token bridging, allowing creators to launch chain-independent collections, games, and web3 experiences effortlessly.
+
 WILDCARD seamlessly integrates into the Polkadot ecosystem via the WILDCARD Pallet , enabling easy deposits and withdrawals of Polkadot assets across parachains and to/from external chains. By leveraging XCM, WILDCARD can provide interoperability across the entire Polkadot ecosystem through a single parachain.
+
 A critical next step for WILDCARD is Polkadot Asset Hub, which enhances asset management and interoperability within the network. Asset Hub's first-class interface for fungible and non-fungible assets provides an efficient, low-cost infrastructure for asset creation and transfers. Integrating with Asset Hub strengthens WILDCARD’s cross-chain liquidity and ensures faster, more scalable NFT movements across different blockchains.
+
 Our core motivation is to bridge Polkadot and Ethereum, making NFTs and fungible assets more accessible while enhancing interoperability, scalability, and security for gaming, digital assets, and web3 applications.
 Our team is committed to breaking the barriers of isolated NFT ecosystems and fostering a more connected, user-friendly blockchain environment and to facilitate TEE-based and non-TEE-based third-party integrations, reducing the entry barrier for traditional Web2 services, games, and platforms.
+
 Unlike existing solutions like SnowBridge and XCM, which primarily focus on bridging fungible assets, WILDCARD is designed specifically for NFTs and is not limited to substrate-based ecosystems. Our use of Trusted Execution Environments (TEEs) enhances security, ensuring smooth and safe integration with gaming platforms.
 
 **Roadmap & Milestones**
