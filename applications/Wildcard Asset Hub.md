@@ -28,6 +28,19 @@ Our core motivation is to bridge Polkadot and Ethereum, making NFTs and fungible
 Our team is committed to breaking the barriers of isolated NFT ecosystems and fostering a more connected, user-friendly blockchain environment and to facilitate TEE-based and non-TEE-based third-party integrations, reducing the entry barrier for traditional Web2 services, games, and platforms.
 Unlike existing solutions like SnowBridge and XCM, which primarily focus on bridging fungible assets, WILDCARD is designed specifically for NFTs and is not limited to substrate-based ecosystems. Our use of Trusted Execution Environments (TEEs) enhances security, ensuring smooth and safe integration with gaming platforms.
 
+Roadmap & Milestones
+2020 – CommiTEE paper published (https://eprint.iacr.org/2020/1486)
+2020 – ETHOnline 🚀 Hackathon Winner & Ethereum’s Impact Summit
+2022 – Ajuna & PolyCrypt collaboration on W3F Grant
+2023 – Publication of the CommiTEE protocol in EuroS&P
+2023 – WILDCARD development kickoff (Polkadot Decoded), legal formation
+2023 – MVP Milestone: NFT transfer on ETH Goerli ↔ Bajun Rococo
+2024 – MVP Demo Milestone: NFT transfer on Bajun Rococo ↔ ETH Sepolia
+2025 – Enhanced resilience & failure resistance supported by TrustChain EU Grant
+2025 – Integration of Polkadot Asset Hub
+With WILDCARD and Asset Hub, we’re paving the way for seamless asset movement across substrate-based and external ecosystems, unlocking new possibilities for NFT projects, gaming, and web3 innovation.
+
+
 ### Project Details
 
 We expect the teams to already have a solid idea about your project's expected final state. Therefore, we ask the teams to submit (where relevant):
