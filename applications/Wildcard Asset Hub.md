@@ -20,7 +20,6 @@ A trustless multi-chain L2 enabling seamless NFT and asset transfers across Polk
 ### Overview
 
 
-
 WILDCARD is a next-generation, trustless multi-chain L2 designed to eliminate ecosystem lock-in for NFTs and fungible assets. It revolutionizes gaming and web3 markets by offering gasless, near-instant transactions and a non-custodial marketplace for secure asset minting, transfers, and trading. As a multi-chain solution, WILDCARD simplifies secure token bridging, allowing creators to launch chain-independent collections, games, and web3 experiences effortlessly.
 
 WILDCARD seamlessly integrates into the Polkadot ecosystem via the WILDCARD Pallet , enabling easy deposits and withdrawals of Polkadot assets across parachains and to/from external chains. By leveraging XCM, WILDCARD can provide interoperability across the entire Polkadot ecosystem through a single parachain.
@@ -47,10 +46,12 @@ With WILDCARD and Asset Hub, we’re paving the way for seamless asset movement 
 
 
 ### Project Details
+![](https://github.com/ssafai/temp/blob/ff4d5ba471a0b71ef2a0dd4633dd78f2982296b6/architecture.png)
 
 
 Architecture: the WILDCARD L2 ledger runs inside a TEE, tracking the full consensus of the various connected chains via chain-specific secondary TEEs, and extracts protocol-specific events (such as token deposits), producing corresponding wrapped tokens on the L2 ledger. An untrusted operator acts as a message relay between users and the TEE, and orchestrates the general service. User-hosted (1:n honesty/availability) watcher TEEs ensure that if the system freezes due to an outage, all chains will freeze on the same checkpoint, guaranteeing the system to always be in a consistent state. When the outage is resolved, the system restarts from the checkpoint it was frozen on. The above diagram shows the current state of development and the plans we have for mainnet maturity and beyond. The most significant additions will be increased redundancy for stronger availability guarantees and more systematic service orchestration, including an administration control panel and safe UI / SDK delivery strategy using IPFS (to protect users from being served malicious frontends) or similar.
 
+![](https://github.com/ssafai/temp/blob/ff4d5ba471a0b71ef2a0dd4633dd78f2982296b6/protocol.png)
 
 The bridging protocol: tokens (fungible or non-fungible) get deposited onto the L2 ledger, remaining locked on the original chain. A wrapped token is issued on the L2 ledger for the same account that deposited it. We use a chain/type/collection descriptor on our L2 to track tokens from various chains. The wrapped token is then transferred to the destination account, which then issues an exit request. On the next epoch shift, the wrapped token is designated for withdrawal to the requested destination chain in the balance proofs issued by the L2 TEE. Next, the system waits for the finalisation of the finished epoch. Finalisation is achieved when we deem the balance proofs to be data-available to all users, which is determined through a challenge/response mechanism. Once the epoch is finalised, the user can redeem his balance proof to acquire a corresponding wrapped token on the destination blockchain (as a native collection with the same metadata as the original collection on the origin chain). Re-depositing a wrapped token onto the L2 will translate it back to the multi-chain asset descriptor referring to the original token. As opposed to native tokens, wrapped tokens get burned upon re-deposit, and withdrawal to the origin chain will unlock the original token.
 
