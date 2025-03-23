@@ -48,22 +48,20 @@ With WILDCARD and Asset Hub, we’re paving the way for seamless asset movement 
 
 ### Project Details
 
-We expect the teams to already have a solid idea about your project's expected final state. Therefore, we ask the teams to submit (where relevant):
 
-- Mockups/designs of any UI components
-- Data models / API specifications of the core functionality
-- An overview of the technology stack to be used
-- Documentation of core components, protocols, architecture, etc. to be deployed
-- PoC/MVP or other relevant prior work or research on the topic
-- What your project is *not* or will *not* provide or implement
-  - This is a place for you to manage expectations and clarify any limitations that might not be obvious
+Architecture: the WILDCARD L2 ledger runs inside a TEE, tracking the full consensus of the various connected chains via chain-specific secondary TEEs, and extracts protocol-specific events (such as token deposits), producing corresponding wrapped tokens on the L2 ledger. An untrusted operator acts as a message relay between users and the TEE, and orchestrates the general service. User-hosted (1:n honesty/availability) watcher TEEs ensure that if the system freezes due to an outage, all chains will freeze on the same checkpoint, guaranteeing the system to always be in a consistent state. When the outage is resolved, the system restarts from the checkpoint it was frozen on. The above diagram shows the current state of development and the plans we have for mainnet maturity and beyond. The most significant additions will be increased redundancy for stronger availability guarantees and more systematic service orchestration, including an administration control panel and safe UI / SDK delivery strategy using IPFS (to protect users from being served malicious frontends) or similar.
 
 
-Things that shouldn’t be part of the application (see also our [FAQ](../docs/faq.md)):
+The bridging protocol: tokens (fungible or non-fungible) get deposited onto the L2 ledger, remaining locked on the original chain. A wrapped token is issued on the L2 ledger for the same account that deposited it. We use a chain/type/collection descriptor on our L2 to track tokens from various chains. The wrapped token is then transferred to the destination account, which then issues an exit request. On the next epoch shift, the wrapped token is designated for withdrawal to the requested destination chain in the balance proofs issued by the L2 TEE. Next, the system waits for the finalisation of the finished epoch. Finalisation is achieved when we deem the balance proofs to be data-available to all users, which is determined through a challenge/response mechanism. Once the epoch is finalised, the user can redeem his balance proof to acquire a corresponding wrapped token on the destination blockchain (as a native collection with the same metadata as the original collection on the origin chain). Re-depositing a wrapped token onto the L2 will translate it back to the multi-chain asset descriptor referring to the original token. As opposed to native tokens, wrapped tokens get burned upon re-deposit, and withdrawal to the origin chain will unlock the original token.
 
-- The (future) tokenomics of your project
-- For non-infrastructure projects—deployment and hosting costs, maintenance or audits
-- Business-oriented activities (marketing, business planning), events or outreach
+If the operator fails to respond to a challenge to publish balance proofs, the system will freeze to the last finalised epoch to protect against malicious operation and to guarantee that users can always withdraw their funds. The watcher TEEs detect the freeze event and are authorised to propagate it across all connected chains (acting as single-purpose cross-chain oracles), so that it is guaranteed that the system halts in a consistent, well-defined state. The unfreeze protocol announces the L2 TEE’s restart (from the frozen epoch’s snapshot) on-chain, and after ensuring that only one TEE instance is running, the system resumes.
+We also added a protocol to let us handle chain outages gracefully without causing the entire system to halt and freeze. As we plan to connect many chains to our system, this becomes a more probable risk we need to address in advance.
+Tech stack The initial codebase was mostly written in Go using the EGo toolset for writing TEE applications in Go. Since we reached general maturity of the project, we have started to migrate components to Rust for better performance and auditability. The core TEE only indirectly interacts with the various blockchains via the chain-specific TEEs that act as intermediaries and abstraction layer, as well as encapsulating third-party blockchain-specific code away from the core service, to reduce the attack surface. We ship a collection of web widgets and a typescript SDK to allow third-party developers to integrate WILDCARD into their dApps or websites.
+
+*What do we not provide/implement*
+* Our project will not include smart contract functionality directly on our L2. Our L2 is a pure asset management layer interconnecting various chains.
+* We do not require users to buy a specific token to use our service. Fees can always be paid in a supported chain’s native currency.
+
 
 ### Ecosystem Fit
 
