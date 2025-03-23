@@ -6,8 +6,7 @@
 > See the [Grants Program Process](https://grants.web3.foundation/docs/process) on how to submit a proposal.
 
 - **Team Name:** PolyCrypt GmbH
-- **Payment Details:** 
-  - **Payment**: 12fxpnqQeRdph6xH8PJ71EFGiFhUavjbvd2at5vAnhLdzGsu 
+- **Payment Details (USDC,DOT):** 12fxpnqQeRdph6xH8PJ71EFGiFhUavjbvd2at5vAnhLdzGsu 
 
 - **[Level](https://grants.web3.foundation/docs/Introduction/levels):** 3
 
