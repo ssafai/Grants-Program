@@ -213,7 +213,7 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 **Costs: 30,000 	 USD**
 
 
-### MS3: Live Stability Testing and Bug Fixing, User Study (1 Month)
+### MS3: Live Stability Testing and Bug Fixing, User Study (1 month)
 **This phase focuses on maturity, QA, and exploratory testing:**
 - Stability Testing & QA
 - Conduct live testing to assess system maturity and ensure stability.
