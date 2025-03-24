@@ -114,12 +114,12 @@ The PolyCrypt team has extensive experience in applied cryptography and blockcha
 
 If anyone on your team has applied for a grant at the Web3 Foundation previously, please list the name of the project and legal entity here.
 
-https://github.com/perun-network/perun-polkadot-backend
+- https://github.com/perun-network/perun-polkadot-backend
 
 
 ### Team Code Repos
 
-- 	https://github.com/perun-network
+- https://github.com/perun-network
 - https://github.com/ajuna-network/ajuna-pallets/tree/develop/pallets/ajuna-wildcard
 
 
@@ -138,6 +138,17 @@ Please also provide the GitHub accounts of all team members. If they contain no 
 
 
 ## Development Status :open_book:
+
+WILDCARD leverages Trusted Execution Environments (TEE) to build a blockchain-agnostic Layer 2 network. The technical foundation of WILDCARD was researched in 2020 as the  	[CommiTEE protocol] (https://www.computer.org/csdl/proceedings-article/eurosp/2023/651200a429/1OFthuPKPLi)  and a prototype has been implemented under the name Erdstall (Website, Technical Overview Slides, SDK, Demo Marketplace). 
+
+Capabilities of the current prototype
+*	Ability to Bridge assets between Substrate-based parachains and Ethereum, allowing for seamless asset transfer in both directions. This is particularly beneficial for users operating across multiple games, ecosystems, and marketplaces.
+*	Designed to facilitate gasless and instant transactions and trades, a feature that significantly reduces the cost & entry barrier for users engaging in blockchain games.
+*	Trustless nature, achieved through user verification of executed code using remote attestation. This method ensures that the code running on WILDCARD is secure and has not been tampered with, thereby maintaining the integrity and trustworthiness of interactions.
+*	WILDCARD’s technical foundation allows optimizing for privacy, if needed, for example by (partially) encrypting NFT metadata, entire transactions, or the resulting balance proofs (ownership).
+*	The inclusion of a Typescript SDK for both Substrate and Ethereum enhances developer accessibility, enabling easier and more efficient integration of the solution into various projects such as games or marketplaces.
+Ü	Features agnostic design built with future extension in mind. This foresight allows for easy adaptation and incorporation of new chains, technologies, and innovations that may emerge in the blockchain space.
+
 
 If you've already started implementing your project or it is part of a larger repository, please provide a link and a description of the code here. In any case, please provide some documentation on the research and other work you have conducted before applying. This could be:
 
