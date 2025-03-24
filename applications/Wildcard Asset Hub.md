@@ -188,7 +188,7 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 - Analyze and support AssetHub-specific characteristics / adjust the code accordingly.
 - Component testing and quality assurance 
 
-**Estimated duration: 2,5 month**
+**Estimated duration: 2,5 months**
 **FTE: 2**
 **Costs: 50,000 USD**
 
@@ -210,10 +210,26 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 
 **Estimated duration: 1,5 month**
 **FTE: 2**
-**Costs: 30000 	 USD**
+**Costs: 30,000 	 USD**
 
 
+###MS3: Live Stability Testing and Bug Fixing, User Study (1 Month)
+**This phase focuses on maturity, QA, and exploratory testing:**
+- Stability Testing & QA
+- Conduct live testing to assess system maturity and ensure stability.
+**Identify and fix critical bugs.**
+- Perform exploratory testing, including stress tests and edge cases.
+- Peer Review & Code Quality Assurance
+- Conduct peer reviews to ensure code quality, maintainability, and adherence to best practices.
+**Real-World Integration & User Study:**
+- Integrate AssetHub tokens into an Ajuna game for practical validation.
+- Explore bridging tokens from other chains to AssetHub.
+- Conduct a user study or collect feedback from early adopters to refine the experience.
 
+
+**Estimated duration: 1 month**
+**FTE: 2**
+**Costs: 15,000 USD**
 
 
 
