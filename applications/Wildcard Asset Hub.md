@@ -150,12 +150,9 @@ Capabilities of the current prototype
 
 ## Development Roadmap :nut_and_bolt:
 
-This section should break the development roadmap down into milestones and deliverables. To assist you in defining it, we have created a document with examples for some grant categories [here](../docs/Support%20Docs/grant_guidelines_per_category.md). Since these will be part of the agreement, it helps to describe *the functionality we should expect in as much detail as possible*, plus how we can verify and test that functionality. Whenever milestones are delivered, we refer to this document to ensure that everything has been delivered as expected.
 
-Below we provide an **example roadmap**. In the descriptions, it should be clear how your project is related to Substrate, Kusama or Polkadot. We *recommend* that teams structure their roadmap as 1 milestone ≈ 1 month.
 
-> [!CAUTION]
-> If any of your deliverables are based on somebody else's work, make sure you work and publish *under the terms of the license* of the respective project and that you **highlight this fact in your milestone documentation** and in the source code if applicable! **Projects that submit other people's work without proper attribution will be immediately terminated.**
+
 
 ### Overview
 
@@ -272,10 +269,10 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 | **0a.** | License | Apache 2.0|
 | **0b.** | Documentation | We will provide inline documentation of the code for the chain enclave.|
 | **0c.** | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests using our existing test-suite |
-| **0d.** | Docker | We’ll provide a Dockerfile to run just the chain enclave (data fetching + decoding) starting from a given block, running against a public testnet. This will not run in SGX but still executes the same code, demonstrating that we can follow the chain's consensus and decode contract events. It will not contain the Wildcard enclave itself, which requires additional setup and MS1 doesn’t contain everything needed to run  Wildcard with AssetHub. |
-| 0e. | Article | We will publish an **article**/workshop that explains [...] (what was done/achieved as part of the grant). (Content, language, and medium should reflect your target audience described above.) |
-| 1. | Binary | We will deliver an SGX binary that checks consensus of the chain, verifies proofs about the state of the contract and outputs events used for further processing in the existing CoreTEE |
-| 2. | Binary | We will deliver a binary that can fetch data and proofs from the chain and give them to the SGX binary for processing. The output of this binary is the event data as it is needed by the CoreTEE. |
+| **0d.** | Docker | Deployment of the entire system is non-trivial (requiring an SGX capable CPU, the correct drivers and in the case of docker forwarding the corresponding devices), especially in the multi-chain case (multiple contracts, configs, secret key handling for multiple chains, …). Instead of a docker container we plan to deploy into a staging environment containing the enclaves, a front-end for interacting with the system and the contracts deployed on test chain(s). This staging environment can be used for testing and demonstrating the functionality and will likely be easier to setup and use than a Dockerfile, especially since there is no need to wait for the system to start and await finality.|
+| 1 | Report | Stability Testing & QA: Comprehensive Stability Test Report outlining system maturity, stability metrics, and identified vulnerabilities. |
+| 2. | Report | Code Quality Assurance Report summarizing peer review findings, issues identified, and actions taken to address them.|
+| 3. |Report |User Study:User Study Summary Report including feedback collected from early adopters, actionable insights derived, and recommended enhancements. |
 
 
 
