@@ -150,13 +150,7 @@ Capabilities of the current prototype
 Ü	Features agnostic design built with future extension in mind. This foresight allows for easy adaptation and incorporation of new chains, technologies, and innovations that may emerge in the blockchain space.
 
 
-If you've already started implementing your project or it is part of a larger repository, please provide a link and a description of the code here. In any case, please provide some documentation on the research and other work you have conducted before applying. This could be:
 
-- links to improvement proposals or [RFPs](https://grants.web3.foundation/docs/rfps) (requests for proposal),
-- academic publications relevant to the problem,
-- links to your research diary, blog posts, articles, forum discussions or open GitHub issues,
-- references to conversations you might have had related to this project with anyone from the Web3 Foundation,
-- previous interface iterations, such as mock-ups and wireframes.
 
 ## Development Roadmap :nut_and_bolt:
 
@@ -169,10 +163,39 @@ Below we provide an **example roadmap**. In the descriptions, it should be clear
 
 ### Overview
 
-- **Total Estimated Duration:** Duration of the whole project (e.g. 2 months)
-- **Full-Time Equivalent (FTE):**  Average number of full-time employees working on the project throughout its duration (see [Wikipedia](https://en.wikipedia.org/wiki/Full-time_equivalent), e.g. 2 FTE)
-- **Total Costs:** Requested amount in USD for the whole project (e.g. 12,000 USD). Note that the acceptance criteria and additional benefits vary depending on the [level](../README.md#level_slider-levels) of funding requested.
-- **DOT %:** Percentage of Total Costs to be paid in (vested) DOT (≥ 50%)
+- **Total Estimated Duration:** 5 months
+- **Full-Time Equivalent (FTE):**  2 FTE
+- **Total Costs:** 95000 USD
+- **DOT %:** 50%)
+
+
+
+
+### MS1: Chain Enclave (2½ months)
+Create a backend for the chain-processing TEE that tracks the AssetHub consensus and extracts the EVM’s emitted events in a provably correct manner. Test that blocks are properly tracked and that events are correctly extracted/decoded.
+**1 week:
+Set up a local AssetHub testnet, deploy Erdstall Solidity contracts on it, and create test tokens and test transactions.
+**2¼ months:
+* Adapt the Substrate chain enclave to support EVM event decoding (likely not directly transferable 1:1 from the Ethereum chain enclave).
+* Token metadata validation
+* Modify existing substrate-enclave (consensus + wildcard-pallet) to make swapping out the pallet for the EVM-based contract easier (code-reuse).
+* New substrate-evm-enclave (or modifying the existing substrate-enclave) that uses the solidity/evm pallet instead of the wildcard-pallet).
+* Implement data (proof) fetching for contract events and needed storage slots (we already use state_getReadProof in the substrate-enclave).
+* Combine substrate proof verification with ethereum proof verification + decoding (both exist already, but in separate enclaves)..
+* Analyze and support AssetHub-specific characteristics / adjust the code accordingly.
+* Component testing and quality assurance 
+
+** Estimated duration: 2,5 month
+** FTE: 2
+** Costs: 50,000 USD
+
+
+
+
+
+
+
+
 
 ### Milestone 1 Example — Basic functionality
 
