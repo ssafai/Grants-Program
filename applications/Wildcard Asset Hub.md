@@ -220,18 +220,18 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 
 
 ### MS3: Live Stability Testing and Bug Fixing, User Study (1 month)
-
+**1 week:**
 **This phase focuses on maturity, QA, and exploratory testing:**
 
 - Stability Testing & QA
 - Conduct live testing to assess system maturity and ensure stability.
-
+**1 week:**
 **Identify and fix critical bugs.**
 
 - Perform exploratory testing, including stress tests and edge cases.
 - Peer Review & Code Quality Assurance
 - Conduct peer reviews to ensure code quality, maintainability, and adherence to best practices.
-
+**2 weeks:**
 **Real-World Integration & User Study:**
 
 - Integrate AssetHub tokens into an Ajuna game for practical validation.
