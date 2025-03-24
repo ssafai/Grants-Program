@@ -173,9 +173,9 @@ Below we provide an **example roadmap**. In the descriptions, it should be clear
 
 ### MS1: Chain Enclave (2½ months)
 Create a backend for the chain-processing TEE that tracks the AssetHub consensus and extracts the EVM’s emitted events in a provably correct manner. Test that blocks are properly tracked and that events are correctly extracted/decoded.
-** 1 week:
+** 1 week:**
 Set up a local AssetHub testnet, deploy Erdstall Solidity contracts on it, and create test tokens and test transactions.
-** 2¼ months:
+** 2¼ months:**
 * Adapt the Substrate chain enclave to support EVM event decoding (likely not directly transferable 1:1 from the Ethereum chain enclave).
 * Token metadata validation
 * Modify existing substrate-enclave (consensus + wildcard-pallet) to make swapping out the pallet for the EVM-based contract easier (code-reuse).
