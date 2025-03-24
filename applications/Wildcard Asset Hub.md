@@ -139,7 +139,7 @@ Please also provide the GitHub accounts of all team members. If they contain no 
 
 ## Development Status :open_book:
 
-WILDCARD leverages Trusted Execution Environments (TEE) to build a blockchain-agnostic Layer 2 network. The technical foundation of WILDCARD was researched in 2020 as the  	[CommiTEE protocol] (https://www.computer.org/csdl/proceedings-article/eurosp/2023/651200a429/1OFthuPKPLi)  and a prototype has been implemented under the name Erdstall (Website, Technical Overview Slides, SDK, Demo Marketplace). 
+WILDCARD leverages Trusted Execution Environments (TEE) to build a blockchain-agnostic Layer 2 network. The technical foundation of WILDCARD was researched in 2020 as the  	[CommiTEE protocol](https://www.computer.org/csdl/proceedings-article/eurosp/2023/651200a429/1OFthuPKPLi)  and a prototype has been implemented under the name Erdstall: [Website](https://erdstall.dev/), [Technical Overview Slides](https://docs.google.com/presentation/d/1t-Xn8Zno8Hq-aidn-gIzJ3nujJsa4Zt79pWq8idLIuM/edit?usp=sharing), [SDK](https://github.com/perun-network/erdstall-ts-sdk), [Demo Marketplace](https://drive.google.com/file/d/1J0aVDjArTVZImI_VrFQkrZxEEdxogk3l/view?usp=drive_link). 
 
 Capabilities of the current prototype
 *	Ability to Bridge assets between Substrate-based parachains and Ethereum, allowing for seamless asset transfer in both directions. This is particularly beneficial for users operating across multiple games, ecosystems, and marketplaces.
