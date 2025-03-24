@@ -332,6 +332,8 @@ Please include here
 - how you intend to use, enhance, and promote your project in the short term, and
 - the team's long-term plans and intentions in relation to it.
 
+WILDCARD plans to offer flexible payment models for its L2 ledger, including per-transaction fees or freemium/tiered subscriptions. In the short to medium term, the focus is on expanding cross-chain connectivity (e.g., Polygon), enhancing accessibility, and improving user experience (i.e. in gaming with Ajuna) to match Web2 standards. Long-term goals include integrating with the Web2 ecosystem and enabling user-hosted L3 TEE services with smart-contract-level trust.
+
 ## Referral Program (optional) :moneybag:
 
 You can find more information about the program [here](https://grants.web3.foundation/docs/referral-program).
