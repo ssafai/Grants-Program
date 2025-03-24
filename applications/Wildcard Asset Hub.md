@@ -188,9 +188,9 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 - Analyze and support AssetHub-specific characteristics / adjust the code accordingly.
 - Component testing and quality assurance 
 
-** Estimated duration: 2,5 month
-** FTE: 2
-** Costs: 50,000 USD
+**Estimated duration: 2,5 month**
+**FTE: 2**
+**Costs: 50,000 USD**
 
 
 
@@ -208,9 +208,9 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 - Add a new backend for AssetHub, re-using components from the substrate and ethereum backends where possible.
 - Rework the Ethereum backend, to decouple the underlying chain architecture from the contract ABI to accommodate code reuse between the Ethereum and AssetHub backends.
 
-** Estimated duration: 1,5 month
-** FTE: 2
-** Costs: 30000 	 USD
+**Estimated duration: 1,5 month**
+**FTE: 2**
+**Costs: 30000 	 USD**
 
 
 
