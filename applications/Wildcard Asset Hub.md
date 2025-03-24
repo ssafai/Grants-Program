@@ -83,45 +83,58 @@ Within the Polkadot Ecosystem, WILDCARD distinguishes itself through its use of 
 
 ## Team :busts_in_silhouette:
 
-> [!IMPORTANT]
-> Please note that the data provided in this section is for administrative and informational purposes only. All beneficiaries of a grant must also be listed in the KYC/KYB process during the application phase. See our [FAQ](https://grants.web3.foundation/docs/faq#what-is-kyckyb-and-why-do-i-have-to-provide-this-data) for more info.
+The PolyCrypt team consists of leading academic researchers in the off-chain space and experienced software developers of blockchain and cryptographic software. 
 
 ### Team members
 
-- Name of team leader
-- Names of team members
+*	Hendrik Amler (Co-founder, CEO, team and project management, @tinnendo). He holds a master's degree in Computer Science with a focus on IT security.
+* Jens Winkle (Core Developer, Software Architect, TEE expert @DragonDev1906). He holds a Master's degree in IT security from TU Darmstadt. He has been working on WILDCARD at PolyCrypt since 2022, and before that wrote his master thesis about an aspect of WILDCARD.
+*	Steffen Rattay (Core Developer, Software architect @RmbRT) has been working on WILDCARD since its inception in late 2020 and has been working on the Perun State Channel project since 2019 at PolyCrypt.
+* Philipp Lehwalder (Developer, @cryptphil)
+* Sasan Safai (Project- and Product-Management) holds a master degree in business information systems and is responsible for delivering valuable products on time at PolyCrypt.
+* Prof. Sebastian Faust (Co-founder, and research lead) is a full professor at the Computer Science department of Technical University of Darmstadt, where he leads the applied cryptography and blockchain lab. His main scientific contributions to the blockchain space are the co-invention of the concept of Proofs of Space (on which the cryptocurrency Chia is based), the first formal analysis of BIP32 wallets, and extensive work on off-chain protocols (co-inventing state channels and virtual channels). Sebastian Faust leads research at PolyCrypt and the protocols used in WILDCARD are based on his work.
+
+
+We will continue to closely collaborate with Ajuna Network, leveraging their expertise in the gaming sector to drive innovation and enhance NFT and asset interoperability in the Polkadot ecosystem.
+
 
 ### Contact
 
-- **Contact Name:** Full name of the contact person in your team
-- **Contact Email:** Contact email (e.g. john@duo.com)
-- **Website:** Your website
+- **Contact Name:** Hendrik Amler
+- **Contact Email:** Hendrik@polycry.pt
+- **Website:**  https://polycry.pt/
 
 ### Legal Structure
 
-- **Registered Address:** Address of your registered legal entity, if available. Please keep it in a single line. (e.g. High Street 1, London LK1 234, UK)
-- **Registered Legal Entity:** Name of your registered legal entity, if available. (e.g. Duo Ltd.)
-
+- **Registered Address:** : PolyCrypt GmbH, Hilpertstraße 31, 64295 Darmstadt, Germany
+- **Registered Legal Entity:** : PolyCrypt GmbH, Handelsregister Darmstadt HRB 101219, VAT DE339864467
 ### Team's experience
 
-Please describe the team's relevant experience. If your project involves development work, we would appreciate it if you singled out a few interesting projects or contributions made by team members in the past.
+The PolyCrypt team has extensive experience in applied cryptography and blockchain research as well as in software development. Our team members include the leading researchers on the WILDCARD and Perun State Channel research papers, which have been published at renowned conferences. Furthermore, our team includes experienced developers. Our team members are the main developers of WILDCARD and the go-perun library and therefore provide over 5 years of experience specifically in developing software in the blockchain space.
 
 If anyone on your team has applied for a grant at the Web3 Foundation previously, please list the name of the project and legal entity here.
 
+https://github.com/perun-network/perun-polkadot-backend
+
+
 ### Team Code Repos
 
-- https://github.com/{your_organisation}/{project_1}
-- https://github.com/{your_organisation}/{project_2}
+- 	https://github.com/perun-network
+- https://github.com/ajuna-network/ajuna-pallets/tree/develop/pallets/ajuna-wildcard
+
 
 Please also provide the GitHub accounts of all team members. If they contain no activity, references to projects hosted elsewhere or live are also fine.
 
-- https://github.com/{team_member_1}
-- https://github.com/{team_member_2}
+- https://github.com/tinnendo  
+- https://github.com/DragonDev1906  
+- https://github.com/RmbRT  
+-	https://github.com/cryptphil  
+-	https://github.com/darkfriend77 (Ajuna) 
 
 ### Team LinkedIn Profiles (if available)
+- https://de.linkedin.com/company/polycrypt
 
-- https://www.linkedin.com/{person_1}
-- https://www.linkedin.com/{person_2}
+
 
 
 ## Development Status :open_book:
