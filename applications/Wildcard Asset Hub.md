@@ -66,6 +66,19 @@ We also added a protocol to let us handle chain outages gracefully without causi
 
 
 ### Ecosystem Fit
+Polkadot currently offers various modules for NFT usage. Some are pallet-native, like the old pallet_unique and the new pallet_nfts, while others exist within EVM-based parachains. However, NFT ownership remains tightly bound to the ecosystem in which the asset is minted or issued. Currently, there is no solution that enables truly blockchain-agnostic NFT transfers between parachains,from the relay chain to a parachain or across different blockchain ecosystems (for example Ethereum). While solutions like XFM NFT may emerge for Substrate-based NFTs, our approach distinctly targets interoperability beyond the Substrate ecosystem, ensuring seamless NFT movement across diverse blockchain networks.
+
+WILDCARD enables businesses, developers, and users to fully leverage NFTs by facilitating seamless cross-chain transfers. By adding Asset Hub compatibility/integration we simplify integration, enhance market accessibility, and unlock broader liquidity across parachains and external ecosystems.
+
+Currently, NFT-based projects within the Polkadot ecosystem face structural limitations, as they remain tied to their specific parachains. This makes it challenging to access broader markets, integrate liquidity, or interact with external blockchain ecosystems. Asset Hub, a dedicated parachain for managing both fungible and non-fungible assets, represents a step toward addressing these challenges. By offering a standardized framework for NFTs, it provides a more structured approach to asset interoperability within Polkadot, though broader cross-ecosystem compatibility remains an ongoing area of development
+
+With WILDCARD, we eliminate the barriers preventing NFTs from reaching new ecosystems. Our solution allows seamless off- and onboarding of assets—both fungible and non-fungible—between substrate-based chains and external ecosystems. By leveraging Asset Hub alongside WILDCARD, we enable NFTs to move across parachains efficiently and access global markets, including Ethereum and beyond.
+
+This advancement ensures that NFT projects are no longer confined to their parachains, unlocking broader market access, increased liquidity, and greater adoption across multiple ecosystems.
+
+Within the Polkadot Ecosystem, WILDCARD distinguishes itself through its use of Trusted Execution Environments (TEEs) to enhance asset accessibility. Unlike other projects in this space, such as SnowBridge &  XCM, which primarily focus on bridging fungible assets, WILDCARD broadens its scope to include a diverse array of asset types, notably focussing on non-fungible assets. This capability not only differentiates WILDCARD within the ecosystem but also facilitates smooth integration with gaming platforms, thereby solidifying its unique and pivotal role in the Polkadot network
+
+
 
 Help us locate your project in the Polkadot/Substrate/Kusama landscape and what problems it tries to solve by answering each of these questions:
 
