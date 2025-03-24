@@ -192,9 +192,8 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 | **0b.** | Documentation | We will provide inline documentation of the code for the chain enclave.|
 | **0c.** | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests using our existing test-suite |
 | **0d.** | Docker | We’ll provide a Dockerfile to run just the chain enclave (data fetching + decoding) starting from a given block, running against a public testnet. This will not run in SGX but still executes the same code, demonstrating that we can follow the chain's consensus and decode contract events. It will not contain the Wildcard enclave itself, which requires additional setup and MS1 doesn’t contain everything needed to run  Wildcard with AssetHub. |
-| 0e. | Article | We will publish an **article**/workshop that explains [...] (what was done/achieved as part of the grant). (Content, language, and medium should reflect your target audience described above.) |
-| 1. | Binary | We will deliver an SGX binary that checks consensus of the chain, verifies proofs about the state of the contract and outputs events used for further processing in the existing CoreTEE |
-| 2. | Binary | We will deliver a binary that can fetch data and proofs from the chain and give them to the SGX binary for processing. The output of this binary is the event data as it is needed by the CoreTEE. |
+| **1.** | Binary | We will deliver an SGX binary that checks consensus of the chain, verifies proofs about the state of the contract and outputs events used for further processing in the existing CoreTEE |
+| **2.** | Binary | We will deliver a binary that can fetch data and proofs from the chain and give them to the SGX binary for processing. The output of this binary is the event data as it is needed by the CoreTEE. |
 
 
 
@@ -230,10 +229,10 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 | **0b.** | Documentation | We will provide inline documentation of the code for the chain enclave.|
 | **0c.** | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests using our existing test-suite |
 | **0d.** | Docker | Deployment of the entire system is non-trivial (requiring an SGX capable CPU, the correct drivers and in the case of docker forwarding the corresponding devices), especially in the multi-chain case (multiple contracts, configs, secret key handling for multiple chains, …). Instead of a docker container we plan to deploy into a staging environment containing the enclaves, a front-end for interacting with the system and the contracts deployed on test chain(s). This staging environment can be used for testing and demonstrating the functionality and will likely be easier to setup and use than a Dockerfile, especially since there is no need to wait for the system to start and await finality.|
-| 1. | Binary | We will add the data fetching and the logic to run the SGX binary from MS1 as part of the Wildcard system (erdstall-runner; chain → CoreTEE) |
-| 2. | Binary | : We will add the required types (addresses, balance proof encoding, signatures, ...) to the CoreTEE to finish the enclave+runner side (CoreTEE → Users)  |
-| 3. | Binary | : We will add required transactions to the operator binary for interacting with AssetHub (instead of just passively reading state; CoreTEE → chain)  |
-| 4. | SDK/Libary | : We will extend the existing Wildcard TypeScript SDK to include support for Depositing from and withdrawing to AssetHub. (Users → chain)
+| **1**. | Binary | We will add the data fetching and the logic to run the SGX binary from MS1 as part of the Wildcard system (erdstall-runner; chain → CoreTEE) |
+| **2.** | Binary | : We will add the required types (addresses, balance proof encoding, signatures, ...) to the CoreTEE to finish the enclave+runner side (CoreTEE → Users)  |
+| **3.** | Binary | : We will add required transactions to the operator binary for interacting with AssetHub (instead of just passively reading state; CoreTEE → chain)  |
+| **4.** | SDK/Libary | : We will extend the existing Wildcard TypeScript SDK to include support for Depositing from and withdrawing to AssetHub. (Users → chain)
  |
 
 
@@ -270,9 +269,9 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 | **0b.** | Documentation | We will provide inline documentation of the code for the chain enclave.|
 | **0c.** | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests using our existing test-suite |
 | **0d.** | Docker | Deployment of the entire system is non-trivial (requiring an SGX capable CPU, the correct drivers and in the case of docker forwarding the corresponding devices), especially in the multi-chain case (multiple contracts, configs, secret key handling for multiple chains, …). Instead of a docker container we plan to deploy into a staging environment containing the enclaves, a front-end for interacting with the system and the contracts deployed on test chain(s). This staging environment can be used for testing and demonstrating the functionality and will likely be easier to setup and use than a Dockerfile, especially since there is no need to wait for the system to start and await finality.|
-| 1 | Report | Stability Testing & QA: Comprehensive Stability Test Report outlining system maturity, stability metrics, and identified vulnerabilities. |
-| 2. | Report | Code Quality Assurance Report summarizing peer review findings, issues identified, and actions taken to address them.|
-| 3. |Report |User Study:User Study Summary Report including feedback collected from early adopters, actionable insights derived, and recommended enhancements. |
+| **1.** | Report | Stability Testing & QA: Comprehensive Stability Test Report outlining system maturity, stability metrics, and identified vulnerabilities. |
+| **2.** | Report | Code Quality Assurance Report summarizing peer review findings, issues identified, and actions taken to address them.|
+| **3.** |Report |User Study:User Study Summary Report including feedback collected from early adopters, actionable insights derived, and recommended enhancements. |
 
 
 
@@ -304,13 +303,7 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 | 6. | Smart contracts: ... | We will deliver a set of ink! smart contracts that will...
 
 
-### Milestone 2 Example — Additional features
 
-- **Estimated Duration:** 1 month
-- **FTE:**  1,5
-- **Costs:** 8,000 USD
-
-...
 
 
 ## Future Plans
