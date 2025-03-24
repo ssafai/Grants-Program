@@ -173,19 +173,20 @@ Below we provide an **example roadmap**. In the descriptions, it should be clear
 
 ### MS1: Chain Enclave (2½ months)
 Create a backend for the chain-processing TEE that tracks the AssetHub consensus and extracts the EVM’s emitted events in a provably correct manner. Test that blocks are properly tracked and that events are correctly extracted/decoded.
+
 **1 week:** 
 
-* Set up a local AssetHub testnet, deploy Erdstall Solidity contracts on it, and create test tokens and test transactions.
+- Set up a local AssetHub testnet, deploy Erdstall Solidity contracts on it, and create test tokens and test transactions.
+  
 **2¼ months:**
-   
-* Adapt the Substrate chain enclave to support EVM event decoding (likely not directly transferable 1:1 from the Ethereum chain enclave).
-* Token metadata validation
-* Modify existing substrate-enclave (consensus + wildcard-pallet) to make swapping out the pallet for the EVM-based contract easier (code-reuse).
-* New substrate-evm-enclave (or modifying the existing substrate-enclave) that uses the solidity/evm pallet instead of the wildcard-pallet).
-* Implement data (proof) fetching for contract events and needed storage slots (we already use state_getReadProof in the substrate-enclave).
-* Combine substrate proof verification with ethereum proof verification + decoding (both exist already, but in separate enclaves)..
-* Analyze and support AssetHub-specific characteristics / adjust the code accordingly.
-* Component testing and quality assurance 
+- Adapt the Substrate chain enclave to support EVM event decoding (likely not directly transferable 1:1 from the Ethereum chain enclave).
+- Token metadata validation
+- Modify existing substrate-enclave (consensus + wildcard-pallet) to make swapping out the pallet for the EVM-based contract easier (code-reuse).
+- New substrate-evm-enclave (or modifying the existing substrate-enclave) that uses the solidity/evm pallet instead of the wildcard-pallet).
+- Implement data (proof) fetching for contract events and needed storage slots (we already use state_getReadProof in the substrate-enclave).
+- Combine substrate proof verification with ethereum proof verification + decoding (both exist already, but in separate enclaves)..
+- Analyze and support AssetHub-specific characteristics / adjust the code accordingly.
+- Component testing and quality assurance 
 
 ** Estimated duration: 2,5 month
 ** FTE: 2
