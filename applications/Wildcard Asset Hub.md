@@ -199,11 +199,11 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 - Add support for the new chain enclave (MS1) to the core WILDCARD enclave and the TEE watcher code.
 - Add frontend UI support for AssetHub in our TypeScript SDK.
 - Test and deploy in our staging environment, connected to (public) testnet
-**1 week:**
+  ##1 week:
 - Adapt the watcher so that it can understand the chain and issue token metadata proofs for tokens on this chain.
 ** 1 week:**
 - Modify the core enclave to support this new type of chain (including chain type, address formats, assigning a chain ID in the chain enum, etc.).
-**1 month:**
+  ##1 month:**
 - Adjust the TypeScript SDK:
 - Add a new backend for AssetHub, re-using components from the substrate and ethereum backends where possible.
 - Rework the Ethereum backend, to decouple the underlying chain architecture from the contract ABI to accommodate code reuse between the Ethereum and AssetHub backends.
