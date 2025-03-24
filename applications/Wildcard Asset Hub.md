@@ -147,7 +147,7 @@ Capabilities of the current prototype
 *	Trustless nature, achieved through user verification of executed code using remote attestation. This method ensures that the code running on WILDCARD is secure and has not been tampered with, thereby maintaining the integrity and trustworthiness of interactions.
 *	WILDCARD’s technical foundation allows optimizing for privacy, if needed, for example by (partially) encrypting NFT metadata, entire transactions, or the resulting balance proofs (ownership).
 *	The inclusion of a Typescript SDK for both Substrate and Ethereum enhances developer accessibility, enabling easier and more efficient integration of the solution into various projects such as games or marketplaces.
-Ü	Features agnostic design built with future extension in mind. This foresight allows for easy adaptation and incorporation of new chains, technologies, and innovations that may emerge in the blockchain space.
+* Features agnostic design built with future extension in mind. This foresight allows for easy adaptation and incorporation of new chains, technologies, and innovations that may emerge in the blockchain space.
 
 
 
@@ -220,17 +220,20 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 
 
 ### MS3: Live Stability Testing and Bug Fixing, User Study (1 month)
+
 **1 week:**
 **This phase focuses on maturity, QA, and exploratory testing:**
 
 - Stability Testing & QA
 - Conduct live testing to assess system maturity and ensure stability.
+
 **1 week:**
 **Identify and fix critical bugs.**
 
 - Perform exploratory testing, including stress tests and edge cases.
 - Peer Review & Code Quality Assurance
 - Conduct peer reviews to ensure code quality, maintainability, and adherence to best practices.
+
 **2 weeks:**
 **Real-World Integration & User Study:**
 
