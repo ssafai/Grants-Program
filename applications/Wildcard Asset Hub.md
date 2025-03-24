@@ -192,16 +192,14 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 | Number | Deliverable | Specification |
 | -----: | ----------- | ------------- |
 | **0a.** | License | Apache 2.0|
-| **0b.** | Documentation | We will provide both **inline documentation** of the code and a basic **tutorial** that explains how a user can (for example) spin up one of our Substrate nodes and send test transactions, which will show how the new functionality works. See the [delivery guidelines](https://grants.web3.foundation/docs/Support%20Docs/milestone-deliverables-guidelines#documentation) for details. |
-| **0c.** | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. See the [delivery guidelines](https://grants.web3.foundation/docs/Support%20Docs/milestone-deliverables-guidelines#testing-guide) for details. |
-| **0d.** | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
+| **0b.** | Documentation | We will provide inline documentation of the code for the chain enclave.|
+| **0c.** | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests using our existing test-suite |
+| **0d.** | Docker | We’ll provide a Dockerfile to run just the chain enclave (data fetching + decoding) starting from a given block, running against a public testnet. This will not run in SGX but still executes the same code, demonstrating that we can follow the chain's consensus and decode contract events. It will not contain the Wildcard enclave itself, which requires additional setup and MS1 doesn’t contain everything needed to run  Wildcard with AssetHub. |
 | 0e. | Article | We will publish an **article**/workshop that explains [...] (what was done/achieved as part of the grant). (Content, language, and medium should reflect your target audience described above.) |
-| 1. | Substrate module: X | We will create a Substrate module that will... (Please list the functionality that will be implemented for the first milestone. You can refer to details provided in previous sections.) |
-| 2. | Substrate module: Y | The Y Substrate module will... |
-| 3. | Substrate module: Z | The Z Substrate module will... |
-| 4. | Substrate chain | Modules X, Y & Z of our custom chain will interact in such a way... (Please describe the deliverable here as detailed as possible) |
-| 5. | Library: ABC | We will deliver a JS library that will implement the functionality described under "ABC Library" |
-| 6. | Smart contracts: ... | We will deliver a set of ink! smart contracts that will...
+| 1. | Binary | We will deliver an SGX binary that checks consensus of the chain, verifies proofs about the state of the contract and outputs events used for further processing in the existing CoreTEE |
+| 2. | Binary | We will deliver a binary that can fetch data and proofs from the chain and give them to the SGX binary for processing. The output of this binary is the event data as it is needed by the CoreTEE. |
+
+
 
 
 ### MS2: Support in CoreTEE and deployment on testnet (1½ months)
@@ -229,17 +227,18 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 
 | Number | Deliverable | Specification |
 | -----: | ----------- | ------------- |
+| Number | Deliverable | Specification |
+| -----: | ----------- | ------------- |
 | **0a.** | License | Apache 2.0|
-| **0b.** | Documentation | We will provide both **inline documentation** of the code and a basic **tutorial** that explains how a user can (for example) spin up one of our Substrate nodes and send test transactions, which will show how the new functionality works. See the [delivery guidelines](https://grants.web3.foundation/docs/Support%20Docs/milestone-deliverables-guidelines#documentation) for details. |
-| **0c.** | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. See the [delivery guidelines](https://grants.web3.foundation/docs/Support%20Docs/milestone-deliverables-guidelines#testing-guide) for details. |
-| **0d.** | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
-| 0e. | Article | We will publish an **article**/workshop that explains [...] (what was done/achieved as part of the grant). (Content, language, and medium should reflect your target audience described above.) |
-| 1. | Substrate module: X | We will create a Substrate module that will... (Please list the functionality that will be implemented for the first milestone. You can refer to details provided in previous sections.) |
-| 2. | Substrate module: Y | The Y Substrate module will... |
-| 3. | Substrate module: Z | The Z Substrate module will... |
-| 4. | Substrate chain | Modules X, Y & Z of our custom chain will interact in such a way... (Please describe the deliverable here as detailed as possible) |
-| 5. | Library: ABC | We will deliver a JS library that will implement the functionality described under "ABC Library" |
-| 6. | Smart contracts: ... | We will deliver a set of ink! smart contracts that will...
+| **0b.** | Documentation | We will provide inline documentation of the code for the chain enclave.|
+| **0c.** | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests using our existing test-suite |
+| **0d.** | Docker | Deployment of the entire system is non-trivial (requiring an SGX capable CPU, the correct drivers and in the case of docker forwarding the corresponding devices), especially in the multi-chain case (multiple contracts, configs, secret key handling for multiple chains, …). Instead of a docker container we plan to deploy into a staging environment containing the enclaves, a front-end for interacting with the system and the contracts deployed on test chain(s). This staging environment can be used for testing and demonstrating the functionality and will likely be easier to setup and use than a Dockerfile, especially since there is no need to wait for the system to start and await finality.|
+| 1. | Binary | We will add the data fetching and the logic to run the SGX binary from MS1 as part of the Wildcard system (erdstall-runner; chain → CoreTEE) |
+| 2. | Binary | : We will add the required types (addresses, balance proof encoding, signatures, ...) to the CoreTEE to finish the enclave+runner side (CoreTEE → Users)  |
+| 3. | Binary | : We will add required transactions to the operator binary for interacting with AssetHub (instead of just passively reading state; CoreTEE → chain)  |
+| 4. | SDK/Libary | : We will extend the existing Wildcard TypeScript SDK to include support for Depositing from and withdrawing to AssetHub. (Users → chain)
+ |
+
 
 ### MS3: Live Stability Testing and Bug Fixing, User Study (1 month)
 
@@ -271,16 +270,13 @@ Create a backend for the chain-processing TEE that tracks the AssetHub consensus
 | Number | Deliverable | Specification |
 | -----: | ----------- | ------------- |
 | **0a.** | License | Apache 2.0|
-| **0b.** | Documentation | We will provide both **inline documentation** of the code and a basic **tutorial** that explains how a user can (for example) spin up one of our Substrate nodes and send test transactions, which will show how the new functionality works. See the [delivery guidelines](https://grants.web3.foundation/docs/Support%20Docs/milestone-deliverables-guidelines#documentation) for details. |
-| **0c.** | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. See the [delivery guidelines](https://grants.web3.foundation/docs/Support%20Docs/milestone-deliverables-guidelines#testing-guide) for details. |
-| **0d.** | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
+| **0b.** | Documentation | We will provide inline documentation of the code for the chain enclave.|
+| **0c.** | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests using our existing test-suite |
+| **0d.** | Docker | We’ll provide a Dockerfile to run just the chain enclave (data fetching + decoding) starting from a given block, running against a public testnet. This will not run in SGX but still executes the same code, demonstrating that we can follow the chain's consensus and decode contract events. It will not contain the Wildcard enclave itself, which requires additional setup and MS1 doesn’t contain everything needed to run  Wildcard with AssetHub. |
 | 0e. | Article | We will publish an **article**/workshop that explains [...] (what was done/achieved as part of the grant). (Content, language, and medium should reflect your target audience described above.) |
-| 1. | Substrate module: X | We will create a Substrate module that will... (Please list the functionality that will be implemented for the first milestone. You can refer to details provided in previous sections.) |
-| 2. | Substrate module: Y | The Y Substrate module will... |
-| 3. | Substrate module: Z | The Z Substrate module will... |
-| 4. | Substrate chain | Modules X, Y & Z of our custom chain will interact in such a way... (Please describe the deliverable here as detailed as possible) |
-| 5. | Library: ABC | We will deliver a JS library that will implement the functionality described under "ABC Library" |
-| 6. | Smart contracts: ... | We will deliver a set of ink! smart contracts that will...
+| 1. | Binary | We will deliver an SGX binary that checks consensus of the chain, verifies proofs about the state of the contract and outputs events used for further processing in the existing CoreTEE |
+| 2. | Binary | We will deliver a binary that can fetch data and proofs from the chain and give them to the SGX binary for processing. The output of this binary is the event data as it is needed by the CoreTEE. |
+
 
 
 
