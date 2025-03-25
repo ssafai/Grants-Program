@@ -285,8 +285,4 @@ WILDCARD plans to offer flexible payment models for its L2 ledger, including per
 
 **How did you hear about the Grants Program?** Web3 Foundation Website / Medium / Twitter / Element / Announcement by another team / personal recommendation / etc.
 
-Here you can also add any additional information that you think is relevant to this application but isn't part of it already, such as:
-
-- Work you have already done.
-- If there are any other teams who have already contributed (financially) to the project.
-- Previous grants you may have applied for.
+We have already successfully applied for a grant in the Polkadot ecosystem in collaboration with Ajuna, aiming to improve the NFT experience. You can find our submission here: https://github.com/w3f/Grants-Program/blob/master/applications/perun_app_channels.md.
